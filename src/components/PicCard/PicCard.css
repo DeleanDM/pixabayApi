@@ -1,0 +1,30 @@
+.picture
+{
+    transform: scale(1.3);
+    width: 100%;
+    z-index: 1;
+}
+
+.pictureList
+{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px black;
+    margin: 5px;
+    width: 450px;
+    height: 300px;
+    list-style: none;
+    transition: 0.3s transform;
+}
+.pictureList:hover
+{
+    transform: scale(1.1);
+    z-index: 2;
+}
+.pictureContainer
+{
+    width: 100%;
+    height: 100%;
+}
