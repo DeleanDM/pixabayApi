@@ -1,10 +1,14 @@
 import React from 'react'
 import './PicCard.css'
+import {NavLink} from 'react-router-dom'
 function Index({pics}) {
+
     return (
         <li className = "pictureList">
            <div className = "pictureContainer">
-             <img className = "picture" src={pics.largeImageURL} alt='pic' />
+             <NavLink to = {`/pixabayapi/img/${pics.id}`}> 
+                <img className = "picture" src={pics.largeImageURL} alt='pic' />
+             </NavLink> 
            </div>
         </li>
     )

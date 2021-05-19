@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import useDebounce from './hooks/use-debounce';
-import getPhotos from './services/photoApi'
+import {getPhotos, getPhotosByid} from './services/photoApi'
 import PicCard from './components/PicCard'
-
-function App() {
+import queryString from 'query-string'
+function App({history}) {
 
   const [pics, setPics] = useState([])
   const [yourQuery, setYourQuery] = useState("")
@@ -12,7 +12,13 @@ function App() {
   const debouncedSearch = useDebounce(yourQuery, 500)
 
   useEffect(() => {
+    const query =  queryString.parse(history.location.search)
+    console.log(query)
+    setYourQuery(query.search)
+  }, [])
+  useEffect(() => {
     if (debouncedSearch) {
+      history.push({search: `search=${yourQuery}`})
       getPhotos(debouncedSearch, yourPage)
         .then((res) => { console.log(res.data.hits); setPics(res.data.hits) })
     }
