@@ -1,4 +1,93 @@
 *{margin: 0;padding: 0;}
+#slideRight{
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight; 
+
+  animation-duration: 2s; 
+  -webkit-animation-duration: 2s;
+
+  animation-timing-function: ease-in-out; 
+  -webkit-animation-timing-function: ease-in-out;     
+
+  visibility: visible !important;   
+}
+@keyframes slideRight {
+  0% {
+      transform: translateX(-150%);
+  }
+  50%{
+      transform: translateX(8%);
+  }
+  65%{
+      transform: translateX(-4%);
+  }
+  80%{
+      transform: translateX(4%);
+  }
+  95%{
+      transform: translateX(-2%);
+  }           
+  100% {
+      transform: translateX(0%);
+  }   
+}
+.prevButton, .nextButton
+{
+  text-decoration: none;
+  display: inline-block;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 45px;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  transition: .3s;
+}
+.prevButton:hover
+{
+  background: rgb(190, 190, 190);
+  box-shadow: 0 15px 20px rgba(190, 190, 190, .4);
+  color: white;
+  transform: translateY(-7px);
+}
+.nextButton:hover
+{
+  background: rgb(190, 190, 190);
+  box-shadow: 0 15px 20px rgba(190, 190, 190, .4);
+  color: white;
+  transform: translateY(-7px);
+}
+.queryContainer
+{
+  margin-top: 10px;
+  margin: 5px auto;
+  width: 300px;
+  height: 40px;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dedede #bababa #aaa #bababa;
+  box-shadow: 0 2px 2px rgba(255,255,255,.1), 0 2px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
+  border-radius: 10px;    
+  background-color: #f6f6f6;
+  background-image: linear-gradient(top, #f6f6f6, #eae8e8);
+}
+.queryInput
+{
+  margin-top: 5px;
+  margin-left: 4px;
+  padding: 4px;
+  width: 280px;
+  border-radius: 10px;
+}
 .buttonsContainer
 {
   width: 100%;
@@ -11,31 +100,28 @@
 }
 .allPictures
 {
-  margin: 0 auto;
-  width: 100%;
+  width: 70%;
   list-style: none;
   display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 30%));
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(590px, 50%));
 }
-.queryContainer
-{
+
+.mainDiv {
+  width: 100%; 
+ }
+
+ .contentShell
+ {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+ }
+.leftContent {
+  width: 200px; 
+ }
+.rightContent {
+  width: 200px; 
+ }
+.centerContent {
   width: 100%;
-}
-.inputQuery
-{
-  display: flex;
-  justify-content: center;
-}
-.headerText
-{
-  text-align: center;
-}
-.prevButton
-{
-  padding: 10px;
-}
-.nextButton
-{
-  padding: 10px;
-}
+ }
